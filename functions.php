@@ -7,10 +7,15 @@
  * @package AppTo
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
+if ( ! defined( 'APPTO_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( 'APPTO_VERSION', '1.0.0' );
 }
+
+
+//Define Necessary Constants
+define('APPTO_ASSETS', get_template_directory_uri() . '/assets' );
+
 
 if ( ! function_exists( 'appto_setup' ) ) :
 	/**
@@ -71,18 +76,6 @@ if ( ! function_exists( 'appto_setup' ) ) :
 			)
 		);
 
-		// Set up the WordPress core custom background feature.
-		add_theme_support(
-			'custom-background',
-			apply_filters(
-				'appto_custom_background_args',
-				array(
-					'default-color' => 'ffffff',
-					'default-image' => '',
-				)
-			)
-		);
-
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
@@ -140,21 +133,31 @@ add_action( 'widgets_init', 'appto_widgets_init' );
  * Enqueue scripts and styles.
  */
 function appto_scripts() {
-	wp_enqueue_style( 'appto-style', get_stylesheet_uri(), array(), _S_VERSION );
+
+	wp_enqueue_style('vendor-bundle', APPTO_ASSETS . '/css/vendor.bundle.css', array(), APPTO_VERSION, 'all');
+
+	wp_enqueue_style('template-style', APPTO_ASSETS . '/css/style.css', array('vendor-bundle'), APPTO_VERSION, 'all');
+
+	wp_enqueue_style( 'appto-style', get_stylesheet_uri(), array(), APPTO_VERSION );
 	wp_style_add_data( 'appto-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'appto-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'appto-navigation', get_template_directory_uri() . '/js/navigation.js', array(), APPTO_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	wp_enqueue_script('bundle-js', APPTO_ASSETS . '/js/vendor.bundle.js', array('jquery'), APPTO_VERSION, true);
+	wp_enqueue_script('wavify-js', APPTO_ASSETS . '/js/wavify/twinlight.js', array('jquery'), APPTO_VERSION, true);
+	wp_enqueue_script('wavify-jquery', APPTO_ASSETS . '/js/wavify/jquery.wavify.js', array('jquery'), APPTO_VERSION, true);
+	wp_enqueue_script('main-js', APPTO_ASSETS . '/js/script.js', array('jquery'), APPTO_VERSION, true);
 }
 add_action( 'wp_enqueue_scripts', 'appto_scripts' );
 
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+// require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.

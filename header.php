@@ -25,35 +25,72 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'appto' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$appto_description = get_bloginfo( 'description', 'display' );
-			if ( $appto_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $appto_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+	<!-- Preloader -->
+	<div id="preloader" class="grdnt-blue">
+		<div id="status">&nbsp;</div>
+	</div>
+	<!-- #preloader -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'appto' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
+
+	<!-- Header -->
+	<header id="masthead" class="site-header">
+		<!-- navbar -->
+		<nav id="navbar" class="navbar navbar-custom navbar-fixed-top" data-spy="affix" data-offset-top="70">
+			<div class="container">
+				<div class="row">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header page-scroll">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<i class="fa fa-bars"></i>
+						</button>
+						<a class="navbar-brand page-scroll logo-light" href="index.htmlindex.html"><img alt="" src="<?php echo APPTO_ASSETS; ?>/image/logo.png"></a>
+						<a class="navbar-brand page-scroll logo-clr" href="index.html"><img alt="" src="image/logo-clr.png"></a>
+					</div>
+
+					
+
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<div class="right-nav text-right">
+								<ul class="nav navbar-nav menu">
+									<li>
+										<a href="#home">Home</a>
+									</li>
+									<li>
+										<a href="#overview">Overview</a>
+									</li>
+									<li class="dropdown">
+										<a href="#pages">Pages</a>
+										<div class="dropdown-content">
+											<a href="index.html">Layout 1</a>
+											<a href="index-v2.html">Layout 2</a>
+											<a href="index-v3.html">Layout 3</a>
+											<a href="index-v4.html">Layout 4</a>
+											<a href="index-v5.html">Layout 5</a>
+											<a href="index-v6.html">Layout 6</a>
+											<a href="#">About</a>
+											<a href="#">Blog</a>
+										</div>
+									</li>
+									<li>
+										<a href="#feature">Feature</a>
+									</li>
+									<li>
+										<a href="#pricing">Pricing</a>
+									</li>
+									<li>
+										<a href="#blog">blog</a>
+									</li>
+								</ul>
+							<div class="nav-btn">
+								<a class="btn btn-sm grdnt-green">Get App Now</a>
+							</div>
+						</div>
+					</div>
+					<!-- /.navbar-collapse -->
+				</div>
+	        </div>
+		</nav>
+		<!-- End navbar -->
 	</header><!-- #masthead -->
