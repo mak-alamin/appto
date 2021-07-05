@@ -14,6 +14,7 @@ if ( ! defined( 'APPTO_VERSION' ) ) {
 
 
 //Define Necessary Constants
+define('APPTO_TEXT_DOMAIN', 'appto');
 define('APPTO_ASSETS', get_template_directory_uri() . '/assets' );
 
 
@@ -180,6 +181,12 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/template-functions.php';
 
 /**
+ * Require necessary plugins activation with tgm.
+ */
+require get_template_directory() . '/inc/tgmpa/class-tgm-plugin-activation.php';
+require get_template_directory() . '/inc/tgmpa/register-tgmpa.php';
+
+/**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
@@ -197,7 +204,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
-
 
 /**
  * Demo Data Import

@@ -2,3 +2,6 @@ div[data-name="comming soon"] .ocdi__gl-item-footer {
     color: #000;
     display: none;
 }
+.ocdi__intro-text {
+    display: none;
+}
