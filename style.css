@@ -22,6 +22,17 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
+.admin-bar .navbar.affix{
+    margin-top: 32px;
+}
 .site-header {
     position: relative;
+}
+h1.navbar-brand{
+    font-size: 32px;
+    margin-bottom: 0;
+}
+.navbar-custom.affix-top .navbar-brand.logo-clr,
+.navbar-custom.affix .navbar-brand.logo-light{
+    display: none;
 }

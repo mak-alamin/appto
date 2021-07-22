@@ -525,7 +525,6 @@ div[class*="grdnt-"] .list-style li:before, [class*="grdnt-"] .list-style li:bef
 }
 .dropdown {
   position: relative;
-  display: inline-block;
 }
 .dropdown > a{
   position: relative;
@@ -558,9 +557,15 @@ div[class*="grdnt-"] .list-style li:before, [class*="grdnt-"] .list-style li:bef
 	color: #0facf3!important;
 }
 
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover > .dropdown-content {display: block;}
 
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.dropdown:hover > .dropbtn {background-color: #3e8e41;}
+
+.dropdown-content .dropdown .dropdown-content {
+    left: 95%;
+    top: 0px;
+}
+
 .fw-300{
 	font-weight: 300;
 }

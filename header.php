@@ -43,49 +43,42 @@
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 						<i class="fa fa-bars"></i>
 						</button>
-						<a class="navbar-brand page-scroll logo-light" href="index.htmlindex.html"><img alt="" src="<?php echo APPTO_ASSETS; ?>/image/logo.png"></a>
-						<a class="navbar-brand page-scroll logo-clr" href="index.html"><img alt="" src="image/logo-clr.png"></a>
+						
+						<?php 
+							$custom_logo_id = get_theme_mod( 'custom_logo' );
+							$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+							 
+							if ( has_custom_logo() ) {
+								echo '<a class="navbar-brand page-scroll logo-light" href="'. esc_url(home_url()) .'"><img alt="' . get_bloginfo( 'name' ) . '" src="' . esc_url( $logo[0] ) . '"></a>';
+							} else {
+								echo '<h1 class="navbar-brand page-scroll logo-light"><a href="'. esc_url(home_url()) .'">' . get_bloginfo('name') . '</a></h1>';
+							}
+						?>
+
+						<a class="navbar-brand page-scroll logo-clr" href="index.html"><img alt="" src="<?php echo 'http://localhost/wp_test/wp-content/uploads/2021/07/logo-clr.png';?>"></a>
 					</div>
 
 					
 
-
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<div class="right-nav text-right">
-								<ul class="nav navbar-nav menu">
-									<li>
-										<a href="#home">Home</a>
-									</li>
-									<li>
-										<a href="#overview">Overview</a>
-									</li>
-									<li class="dropdown">
-										<a href="#pages">Pages</a>
-										<div class="dropdown-content">
-											<a href="index.html">Layout 1</a>
-											<a href="index-v2.html">Layout 2</a>
-											<a href="index-v3.html">Layout 3</a>
-											<a href="index-v4.html">Layout 4</a>
-											<a href="index-v5.html">Layout 5</a>
-											<a href="index-v6.html">Layout 6</a>
-											<a href="#">About</a>
-											<a href="#">Blog</a>
-										</div>
-									</li>
-									<li>
-										<a href="#feature">Feature</a>
-									</li>
-									<li>
-										<a href="#pricing">Pricing</a>
-									</li>
-									<li>
-										<a href="#blog">blog</a>
-									</li>
-								</ul>
+
+								<?php 
+								
+									wp_nav_menu(array(
+										'menu'	=> 'menu-1',
+										'menu_class' => 'nav navbar-nav menu',
+										'container' => '',
+										'walker' => new WP_Bootstrap_Navwalker()
+									));
+								
+								?>
+
 							<div class="nav-btn">
 								<a class="btn btn-sm grdnt-green">Get App Now</a>
 							</div>
+
 						</div>
 					</div>
 					<!-- /.navbar-collapse -->

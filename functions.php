@@ -7,13 +7,10 @@
  * @package AppTo
  */
 
+//Define Necessary Constants
 if ( ! defined( 'APPTO_VERSION' ) ) {
-	// Replace the version number of the theme on each release.
 	define( 'APPTO_VERSION', '1.0.0' );
 }
-
-
-//Define Necessary Constants
 define('APPTO_TEXT_DOMAIN', 'appto');
 define('APPTO_ASSETS', get_template_directory_uri() . '/assets' );
 
@@ -52,6 +49,16 @@ if ( ! function_exists( 'appto_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
+
+
+		/**
+		 * Require WP Bootstrap Nav Walker Class
+		 */
+		if( ! file_exists(get_template_directory() . '/libs/bootstrap-navwalker.php') ){
+			return new WP_Error( 'class-wp-bootstrap-navwalker-missing', __( 'It appears the class "wp-bootstrap-navwalker" file may be missing.', 'appto' ) );
+		} else {
+			require_once get_template_directory() . '/libs/bootstrap-navwalker.php';
+		}
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
