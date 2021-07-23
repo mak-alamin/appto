@@ -31,6 +31,52 @@ function appto_customize_register( $wp_customize ) {
 			)
 		);
 	}
+
+
+	/*
+	 *------------------------------------------------------
+	 * Header Panel
+	 * -----------------------------------------------------
+	 */
+	$wp_customize->add_panel('header_id', array(
+		'title' => __('Header', 'appto'),
+		'priority' => 50,
+		'capability' => 'edit_theme_options',
+	));
+
+	//App Download Button Section
+	$wp_customize->add_section('app_button', array(
+		'title'	=> __('App Download Button'),
+		'panel'	=>	'header_id'
+	));
+
+	// Enable/Disable Button
+	$wp_customize->add_setting( 'enable_app_dl_btn', array(
+		'type' => 'theme_mod',
+		'capability' => 'edit_theme_options',
+		'default' => true,
+		'transport' => 'refresh',
+	) );
+
+	$wp_customize->add_control('enable_app_dl_btn', array(
+		'type'	=>	'checkbox',
+		'label'	=>	__('Enable Button', 'appto'),
+		'section'	=>	'app_button'
+	));
+
+	// Button Text
+	$wp_customize->add_setting( 'app_dl_btn_text', array(
+		'type' => 'theme_mod', // or 'option'
+		'capability' => 'edit_theme_options',
+		'default' => 'Get App Now',
+		'transport' => 'refresh',
+	) );
+
+	$wp_customize->add_control('app_dl_btn_text', array(
+		'type'	=>	'text',
+		'label'	=>	__('Button Text', 'appto'),
+		'section'	=>	'app_button'
+	));
 }
 add_action( 'customize_register', 'appto_customize_register' );
 

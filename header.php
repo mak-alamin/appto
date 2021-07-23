@@ -62,23 +62,27 @@
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-							<div class="right-nav text-right">
+						<div class="right-nav text-right">
 
-								<?php 
-								
-									wp_nav_menu(array(
-										'menu'	=> 'menu-1',
-										'menu_class' => 'nav navbar-nav menu',
-										'container' => '',
-										'walker' => new WP_Bootstrap_Navwalker()
-									));
-								
-								?>
-
+						<?php 			
+							wp_nav_menu(array(
+								'menu'	=> 'menu-1',
+								'menu_class' => 'nav navbar-nav menu',
+								'container' => '',
+								'walker' => new WP_Bootstrap_Navwalker()
+							));
+						
+							$btn_enabled = get_theme_mod('enable_app_dl_btn');
+				
+							if ( $btn_enabled ) {
+						?>
 							<div class="nav-btn">
-								<a class="btn btn-sm grdnt-green">Get App Now</a>
+								<a class="btn btn-sm grdnt-green"><?php echo get_theme_mod('app_dl_btn_text', 'Get App Now'); ?>
+								</a>
 							</div>
 
+						<?php } ?>
+						
 						</div>
 					</div>
 					<!-- /.navbar-collapse -->
