@@ -157,7 +157,7 @@ function appto_load_scripts() {
 	}
 
 	wp_enqueue_script('bundle-js', APPTO_ASSETS . '/js/vendor.bundle.js', array('jquery'), APPTO_VERSION, true);
-	wp_enqueue_script('wavify-js', APPTO_ASSETS . '/js/wavify/twinlight.js', array('jquery'), APPTO_VERSION, true);
+	wp_enqueue_script('twinlight-js', APPTO_ASSETS . '/js/wavify/twinlight.js', array('jquery'), APPTO_VERSION, true);
 	wp_enqueue_script('wavify-jquery', APPTO_ASSETS . '/js/wavify/jquery.wavify.js', array('jquery'), APPTO_VERSION, true);
 	wp_enqueue_script('main-js', APPTO_ASSETS . '/js/script.js', array('jquery'), APPTO_VERSION, true);
 }

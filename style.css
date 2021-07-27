@@ -36,3 +36,8 @@ h1.navbar-brand{
 .navbar-custom.affix .navbar-brand.logo-light{
     display: none;
 }
+
+/*.elementor-widget-container,*/
+/*.slide-side {*/
+/*    overflow: hidden;*/
+/*}*/
