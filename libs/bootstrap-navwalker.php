@@ -108,11 +108,15 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) :
 			}
 			$indent = ( $depth ) ? str_repeat( $t, $depth ) : '';
 
-			if ( false !== strpos( $args->items_wrap, 'itemscope' ) && false === $this->has_schema ) {
-				$this->has_schema  = true;
-				$args->link_before = '<span itemprop="name">' . $args->link_before;
-				$args->link_after .= '</span>';
-			}
+//			echo "<pre>";
+//			print_r($args->items_wrap);
+//			echo "</pre>";
+
+//			if ( false !== strpos( $args->items_wrap, 'itemscope' ) && false === $this->has_schema ) {
+//				$this->has_schema  = true;
+//				$args->link_before = '<span itemprop="name">' . $args->link_before;
+//				$args->link_after .= '</span>';
+//			}
 
 			$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 
