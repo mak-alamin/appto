@@ -66,7 +66,7 @@ function appto_import_files() {
       [
         'import_file_name'           => 'App To',
         'categories'                 => [ 'Landing Page' ],
-        'import_file_url'            => get_template_directory_uri() . '/demo-data/app_to.xml',
+        'import_file_url'            => get_template_directory_uri() . '/demo-data/appto_demo_data.xml',
         'import_preview_image_url'   => APPTO_ASSETS . '/image/appto_demo_preview.png',
         'preview_url'                => 'http://www.your_domain.com/my-demo-1',
       ],
