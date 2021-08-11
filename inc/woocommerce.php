@@ -1,4 +1,5 @@
 <?php
+
 /**
  * WooCommerce Compatibility File
  *
@@ -16,7 +17,8 @@
  *
  * @return void
  */
-function appto_woocommerce_setup() {
+function appto_woocommerce_setup()
+{
 	add_theme_support(
 		'woocommerce',
 		array(
@@ -31,19 +33,20 @@ function appto_woocommerce_setup() {
 			),
 		)
 	);
-	add_theme_support( 'wc-product-gallery-zoom' );
-	add_theme_support( 'wc-product-gallery-lightbox' );
-	add_theme_support( 'wc-product-gallery-slider' );
+	add_theme_support('wc-product-gallery-zoom');
+	add_theme_support('wc-product-gallery-lightbox');
+	add_theme_support('wc-product-gallery-slider');
 }
-add_action( 'after_setup_theme', 'appto_woocommerce_setup' );
+add_action('after_setup_theme', 'appto_woocommerce_setup');
 
 /**
  * WooCommerce specific scripts & stylesheets.
  *
  * @return void
  */
-function appto_woocommerce_scripts() {
-	wp_enqueue_style( 'appto-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array(), _S_VERSION );
+function appto_woocommerce_scripts()
+{
+	wp_enqueue_style('appto-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array(), APPTO_VERSION);
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {
@@ -57,9 +60,9 @@ function appto_woocommerce_scripts() {
 			font-style: normal;
 		}';
 
-	wp_add_inline_style( 'appto-woocommerce-style', $inline_font );
+	wp_add_inline_style('appto-woocommerce-style', $inline_font);
 }
-add_action( 'wp_enqueue_scripts', 'appto_woocommerce_scripts' );
+add_action('wp_enqueue_scripts', 'appto_woocommerce_scripts');
 
 /**
  * Disable the default WooCommerce stylesheet.
@@ -69,7 +72,7 @@ add_action( 'wp_enqueue_scripts', 'appto_woocommerce_scripts' );
  *
  * @link https://docs.woocommerce.com/document/disable-the-default-stylesheet/
  */
-add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+add_filter('woocommerce_enqueue_styles', '__return_empty_array');
 
 /**
  * Add 'woocommerce-active' class to the body tag.
@@ -77,12 +80,13 @@ add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
  * @param  array $classes CSS classes applied to the body tag.
  * @return array $classes modified to include 'woocommerce-active' class.
  */
-function appto_woocommerce_active_body_class( $classes ) {
+function appto_woocommerce_active_body_class($classes)
+{
 	$classes[] = 'woocommerce-active';
 
 	return $classes;
 }
-add_filter( 'body_class', 'appto_woocommerce_active_body_class' );
+add_filter('body_class', 'appto_woocommerce_active_body_class');
 
 /**
  * Related Products Args.
@@ -90,25 +94,26 @@ add_filter( 'body_class', 'appto_woocommerce_active_body_class' );
  * @param array $args related products args.
  * @return array $args related products args.
  */
-function appto_woocommerce_related_products_args( $args ) {
+function appto_woocommerce_related_products_args($args)
+{
 	$defaults = array(
 		'posts_per_page' => 3,
 		'columns'        => 3,
 	);
 
-	$args = wp_parse_args( $defaults, $args );
+	$args = wp_parse_args($defaults, $args);
 
 	return $args;
 }
-add_filter( 'woocommerce_output_related_products_args', 'appto_woocommerce_related_products_args' );
+add_filter('woocommerce_output_related_products_args', 'appto_woocommerce_related_products_args');
 
 /**
  * Remove default WooCommerce wrapper.
  */
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 
-if ( ! function_exists( 'appto_woocommerce_wrapper_before' ) ) {
+if (!function_exists('appto_woocommerce_wrapper_before')) {
 	/**
 	 * Before Content.
 	 *
@@ -116,15 +121,16 @@ if ( ! function_exists( 'appto_woocommerce_wrapper_before' ) ) {
 	 *
 	 * @return void
 	 */
-	function appto_woocommerce_wrapper_before() {
-		?>
-			<main id="primary" class="site-main">
+	function appto_woocommerce_wrapper_before()
+	{
+?>
+		<main id="primary" class="site-main">
 		<?php
 	}
 }
-add_action( 'woocommerce_before_main_content', 'appto_woocommerce_wrapper_before' );
+add_action('woocommerce_before_main_content', 'appto_woocommerce_wrapper_before');
 
-if ( ! function_exists( 'appto_woocommerce_wrapper_after' ) ) {
+if (!function_exists('appto_woocommerce_wrapper_after')) {
 	/**
 	 * After Content.
 	 *
@@ -132,13 +138,14 @@ if ( ! function_exists( 'appto_woocommerce_wrapper_after' ) ) {
 	 *
 	 * @return void
 	 */
-	function appto_woocommerce_wrapper_after() {
+	function appto_woocommerce_wrapper_after()
+	{
 		?>
-			</main><!-- #main -->
-		<?php
+		</main><!-- #main -->
+	<?php
 	}
 }
-add_action( 'woocommerce_after_main_content', 'appto_woocommerce_wrapper_after' );
+add_action('woocommerce_after_main_content', 'appto_woocommerce_wrapper_after');
 
 /**
  * Sample implementation of the WooCommerce Mini Cart.
@@ -152,7 +159,7 @@ add_action( 'woocommerce_after_main_content', 'appto_woocommerce_wrapper_after' 
 	?>
  */
 
-if ( ! function_exists( 'appto_woocommerce_cart_link_fragment' ) ) {
+if (!function_exists('appto_woocommerce_cart_link_fragment')) {
 	/**
 	 * Cart Fragments.
 	 *
@@ -161,7 +168,8 @@ if ( ! function_exists( 'appto_woocommerce_cart_link_fragment' ) ) {
 	 * @param array $fragments Fragments to refresh via AJAX.
 	 * @return array Fragments to refresh via AJAX.
 	 */
-	function appto_woocommerce_cart_link_fragment( $fragments ) {
+	function appto_woocommerce_cart_link_fragment($fragments)
+	{
 		ob_start();
 		appto_woocommerce_cart_link();
 		$fragments['a.cart-contents'] = ob_get_clean();
@@ -169,9 +177,9 @@ if ( ! function_exists( 'appto_woocommerce_cart_link_fragment' ) ) {
 		return $fragments;
 	}
 }
-add_filter( 'woocommerce_add_to_cart_fragments', 'appto_woocommerce_cart_link_fragment' );
+add_filter('woocommerce_add_to_cart_fragments', 'appto_woocommerce_cart_link_fragment');
 
-if ( ! function_exists( 'appto_woocommerce_cart_link' ) ) {
+if (!function_exists('appto_woocommerce_cart_link')) {
 	/**
 	 * Cart Link.
 	 *
@@ -179,37 +187,39 @@ if ( ! function_exists( 'appto_woocommerce_cart_link' ) ) {
 	 *
 	 * @return void
 	 */
-	function appto_woocommerce_cart_link() {
-		?>
-		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'appto' ); ?>">
+	function appto_woocommerce_cart_link()
+	{
+	?>
+		<a class="cart-contents" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php esc_attr_e('View your shopping cart', 'appto'); ?>">
 			<?php
 			$item_count_text = sprintf(
 				/* translators: number of items in the mini cart. */
-				_n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'appto' ),
+				_n('%d item', '%d items', WC()->cart->get_cart_contents_count(), 'appto'),
 				WC()->cart->get_cart_contents_count()
 			);
 			?>
-			<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count"><?php echo esc_html( $item_count_text ); ?></span>
+			<span class="amount"><?php echo wp_kses_data(WC()->cart->get_cart_subtotal()); ?></span> <span class="count"><?php echo esc_html($item_count_text); ?></span>
 		</a>
-		<?php
+	<?php
 	}
 }
 
-if ( ! function_exists( 'appto_woocommerce_header_cart' ) ) {
+if (!function_exists('appto_woocommerce_header_cart')) {
 	/**
 	 * Display Header Cart.
 	 *
 	 * @return void
 	 */
-	function appto_woocommerce_header_cart() {
-		if ( is_cart() ) {
+	function appto_woocommerce_header_cart()
+	{
+		if (is_cart()) {
 			$class = 'current-menu-item';
 		} else {
 			$class = '';
 		}
-		?>
+	?>
 		<ul id="site-header-cart" class="site-header-cart">
-			<li class="<?php echo esc_attr( $class ); ?>">
+			<li class="<?php echo esc_attr($class); ?>">
 				<?php appto_woocommerce_cart_link(); ?>
 			</li>
 			<li>
@@ -218,10 +228,10 @@ if ( ! function_exists( 'appto_woocommerce_header_cart' ) ) {
 					'title' => '',
 				);
 
-				the_widget( 'WC_Widget_Cart', $instance );
+				the_widget('WC_Widget_Cart', $instance);
 				?>
 			</li>
 		</ul>
-		<?php
+<?php
 	}
 }
