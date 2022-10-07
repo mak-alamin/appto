@@ -11,8 +11,7 @@ function appto_custom_mime_types($mimes)
 add_filter('upload_mimes', 'appto_custom_mime_types');
 
 //Required and Recommended Plugins
-function appto_register_plugins($plugins)
-{
+function appto_register_plugins( $plugins ) {
   $theme_plugins = [
     [
       'name'     => 'Elementor',
@@ -80,7 +79,7 @@ function appto_import_files()
     [
       'import_file_name'           => 'App To',
       'categories'                 => ['Landing Page'],
-      'import_file_url'            => get_template_directory_uri() . '/demo-data/appto_demo_data.xml',
+      'import_file_url'            => get_template_directory_uri() . '/demo-data/demo-data.xml',
       'import_preview_image_url'   => APPTO_ASSETS . '/image/appto_demo_preview.png',
       'preview_url'                => 'http://www.your_domain.com/appto/demo-1',
     ],
