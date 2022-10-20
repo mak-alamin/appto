@@ -1234,7 +1234,6 @@ div[class*="-alt"]:after,
   left: 0;
   right: 0;
 }
-.home .navbar-custom,
 .blog .navbar-custom {
   background: #235dd8;
   margin-bottom: 100px;
@@ -1359,7 +1358,7 @@ div[class*="-alt"]:after,
    6.0 Banner Styling
    ========================================================================== */
 .hero {
-  height: 750px;
+  height: 100vh;
   position: relative;
   padding-top: 30px;
 }
