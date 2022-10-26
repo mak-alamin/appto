@@ -1358,7 +1358,7 @@ div[class*="-alt"]:after,
    6.0 Banner Styling
    ========================================================================== */
 .hero {
-  height: 100vh;
+  height: 750px;
   position: relative;
   padding-top: 30px;
 }
