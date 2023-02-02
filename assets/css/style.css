@@ -1346,8 +1346,8 @@ div[class*="-alt"]:after,
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   background: #fff;
 }
-.navbar-custom.affix ul li.active a:after {
-  background: #0facf3;
+.navbar-custom.affix ul li.active a::after {
+  background: #fff;
 }
 .navbar-custom.affix .btn-border {
   border-color: inherit;

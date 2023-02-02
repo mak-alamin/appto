@@ -1,4 +1,5 @@
 <?php
+
 /**
  * AppTo Theme Customizer
  *
@@ -10,12 +11,13 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function appto_customize_register( $wp_customize ) {
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+function appto_customize_register($wp_customize)
+{
+	$wp_customize->get_setting('blogname')->transport         = 'postMessage';
+	$wp_customize->get_setting('blogdescription')->transport  = 'postMessage';
+	$wp_customize->get_setting('header_textcolor')->transport = 'postMessage';
 
-	if ( isset( $wp_customize->selective_refresh ) ) {
+	if (isset($wp_customize->selective_refresh)) {
 		$wp_customize->selective_refresh->add_partial(
 			'blogname',
 			array(
@@ -44,6 +46,58 @@ function appto_customize_register( $wp_customize ) {
 		'capability' => 'edit_theme_options',
 	));
 
+	//Logo Upload Section
+	$wp_customize->add_section('appto_logo', array(
+		'title'	=> __('Logo'),
+		'panel'	=>	'header_id'
+	));
+
+	// Logo Default
+	$wp_customize->add_setting('appto_logo_default', array(
+		'type' => 'theme_mod',
+		'capability' => 'edit_theme_options',
+		'default' => get_theme_file_uri('assets/image/logo.png'),
+		'sanitize_callback' => 'esc_url_raw'
+	));
+
+	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'appto_logo_default', array(
+		'label' => 'Default Logo',
+		'priority' => 20,
+		'section' => 'appto_logo',
+		'settings' => 'appto_logo_default',
+		'button_labels' => array( // All These labels are optional
+			'select' => 'Select Logo',
+			'remove' => 'Remove Logo',
+			'change' => 'Change Logo',
+		)
+	)));
+
+
+	// Logo Default
+	$wp_customize->add_setting('appto_logo_transparent', array(
+		'type' => 'theme_mod',
+		'capability' => 'edit_theme_options',
+		'default' => get_theme_file_uri('assets/image/logo-clr.png'),
+		'sanitize_callback' => 'esc_url_raw'
+	));
+
+	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'appto_logo_transparent', array(
+		'label' => 'Transparent Logo',
+		'priority' => 20,
+		'section' => 'appto_logo',
+		'settings' => 'appto_logo_transparent',
+		'button_labels' => array( // All These labels are optional
+			'select' => 'Select Logo',
+			'remove' => 'Remove Logo',
+			'change' => 'Change Logo',
+		)
+	)));
+
+
+
+
+
+
 	//App Download Button Section
 	$wp_customize->add_section('app_button', array(
 		'title'	=> __('App Download Button'),
@@ -51,12 +105,12 @@ function appto_customize_register( $wp_customize ) {
 	));
 
 	// Enable/Disable Button
-	$wp_customize->add_setting( 'enable_app_dl_btn', array(
+	$wp_customize->add_setting('enable_app_dl_btn', array(
 		'type' => 'theme_mod',
 		'capability' => 'edit_theme_options',
 		'default' => true,
 		'transport' => 'refresh',
-	) );
+	));
 
 	$wp_customize->add_control('enable_app_dl_btn', array(
 		'type'	=>	'checkbox',
@@ -65,12 +119,12 @@ function appto_customize_register( $wp_customize ) {
 	));
 
 	// Button Text
-	$wp_customize->add_setting( 'app_dl_btn_text', array(
+	$wp_customize->add_setting('app_dl_btn_text', array(
 		'type' => 'theme_mod', // or 'option'
 		'capability' => 'edit_theme_options',
 		'default' => 'Get App Now',
 		'transport' => 'refresh',
-	) );
+	));
 
 	$wp_customize->add_control('app_dl_btn_text', array(
 		'type'	=>	'text',
@@ -78,15 +132,16 @@ function appto_customize_register( $wp_customize ) {
 		'section'	=>	'app_button'
 	));
 }
-add_action( 'customize_register', 'appto_customize_register' );
+add_action('customize_register', 'appto_customize_register');
 
 /**
  * Render the site title for the selective refresh partial.
  *
  * @return void
  */
-function appto_customize_partial_blogname() {
-	bloginfo( 'name' );
+function appto_customize_partial_blogname()
+{
+	bloginfo('name');
 }
 
 /**
@@ -94,14 +149,16 @@ function appto_customize_partial_blogname() {
  *
  * @return void
  */
-function appto_customize_partial_blogdescription() {
-	bloginfo( 'description' );
+function appto_customize_partial_blogdescription()
+{
+	bloginfo('description');
 }
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function appto_customize_preview_js() {
-	wp_enqueue_script( 'appto-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), APPTO_VERSION, true );
+function appto_customize_preview_js()
+{
+	wp_enqueue_script('appto-customizer', get_template_directory_uri() . '/js/customizer.js', array('customize-preview'), APPTO_VERSION, true);
 }
-add_action( 'customize_preview_init', 'appto_customize_preview_js' );
+add_action('customize_preview_init', 'appto_customize_preview_js');
