@@ -184,6 +184,10 @@ a:hover {
   text-decoration: none;
   color: #fff;
 }
+article {
+  border-bottom: 2px solid rgb(84, 84, 84);
+  margin-bottom: 20px;
+}
 /* ==========================================================================
    3.0 Common css
    ========================================================================== */
@@ -1235,7 +1239,6 @@ div[class*="-alt"]:after,
   right: 0;
 }
 .blog .navbar-custom {
-  background: #235dd8;
   margin-bottom: 100px;
 }
 .navbar-custom:not(.navbar-fixed-top) {
