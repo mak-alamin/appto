@@ -110,6 +110,7 @@ get_header();
 								</div>
 							</a>
 						</div>
+					
 						<div class="spce md"></div>
 						<div class="side-col box category clearfix">
 							<h5 class="heading">Category</h5>

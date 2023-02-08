@@ -1718,7 +1718,9 @@ div[class*="-alt"]:after,
   border-radius: 5px;
   padding: 25px;
 }
-.side-col.box .heading {
+.side-col.box .heading,
+.widget h2, 
+.widget h5 {
   border-left: 2px solid #6ad3fe;
   padding-left: 10px;
   margin-bottom: 25px;
@@ -1770,7 +1772,9 @@ div[class*="-alt"]:after,
 .page-description {
   text-align: center;
 }
-
+.social-holder a {
+  display: inline-block;
+}
 /* ==========================================================================
 /* Error area css
 ============================================================================= */

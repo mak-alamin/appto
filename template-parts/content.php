@@ -27,7 +27,7 @@
 						<a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i>112</a>
 					</li>
 					<li>
-						<a href=""><i class="fa fa-comment-o" aria-hidden="true"></i>22</a>
+						<a href=""><i class="fa fa-comment-o" aria-hidden="true"></i><?php comments_number(); ?></a>
 					</li>
 				</ul>
 			</div><!-- .entry-meta -->
