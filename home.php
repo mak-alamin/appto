@@ -44,6 +44,7 @@ get_header();
 						endif;
 						?>
 
+						<!-- Blog Pagination -->
 						<div class="blog_pagination">
 							<nav aria-label="Page navigation">
 								<ul class="pagination">
@@ -71,14 +72,8 @@ get_header();
 
 					<!-- Side Bar -->
 					<div class="col-md-4">
-						<div class="side-col search">
-							<div class="custom-form rad-70">
-								<input placeholder="search..." class="form-control" type="text">
-								<button type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i></button>
-							</div>
-						</div>
-						<div class="spce md"></div>
-						<div class="side-col box popular clearfix">
+						<!-- Popular Article -->
+						<!-- <div class="side-col box popular clearfix">
 							<h5 class="heading">Popular Article</h5>
 							<a href="blog-single-1.html">
 								<div class="col-xs-4 pl-0">
@@ -110,20 +105,11 @@ get_header();
 								</div>
 							</a>
 						</div>
-					
-						<div class="spce md"></div>
-						<div class="side-col box category clearfix">
-							<h5 class="heading">Category</h5>
-							<ul class="array-list">
-								<li><a href="#">Treands 2019 <span>(02)</span></a></li>
-								<li><a href="#">Android App <span>(05)</span></a></li>
-								<li><a href="#">Social Management <span>(10)</span></a></li>
-								<li><a href="#">Apps Review <span>(16)</span></a></li>
-								<li><a href="#">Apps Design <span>(06)</span></a></li>
-							</ul>
-						</div>
-						<div class="spce md"></div>
-						<div class="side-col box feed clearfix">
+
+						<div class="spce md"></div> -->
+
+						<!-- Twitter Feed -->
+						<!-- <div class="side-col box feed clearfix">
 							<h5 class="heading">Twitter Feed</h5>
 							<ul class="twitter">
 								<li>
@@ -145,19 +131,7 @@ get_header();
 									</div>
 								</li>
 							</ul>
-						</div>
-						<div class="spce md"></div>
-						<div class="side-col box tag clearfix">
-							<h5 class="heading">Tag</h5>
-							<div class="tags alt">
-								<a href="#" class="active">Android</a>
-								<a href="#">Iphone</a>
-								<a href="#">design</a>
-								<a href="#">mockup</a>
-								<a href="#">App</a>
-								<a href="#">Social</a>
-							</div>
-						</div>
+						</div> -->
 
 						<?php get_sidebar(); ?>
 					</div>
