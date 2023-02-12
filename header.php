@@ -109,7 +109,7 @@
 			</nav>
 			<!-- End navbar -->
 
-			<?php if (is_home() && !is_front_page()) { ?>
+			<?php if (is_home() || is_search() && !is_front_page()) { ?>
 				<!-- Blog Banner -->
 				<div id="home" class="hero-single grdnt-cyan">
 					<div class="container h-100">
