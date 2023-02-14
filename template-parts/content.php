@@ -22,7 +22,7 @@
 
 					<!-- appto_posted_by(); -->
 
-					<li><?php appto_posted_on(); ?></li>
+					<li><?php echo appto_posted_on(); ?></li>
 					<li>
 						<a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i>112</a>
 					</li>
@@ -41,20 +41,7 @@
 				the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
 			endif;
 
-			the_content(
-				sprintf(
-					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers */
-						__('Continue reading<span class="screen-reader-text"> "%s"</span>', 'appto'),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					wp_kses_post(get_the_title())
-				)
-			);
+			the_excerpt();
 
 			wp_link_pages(
 				array(
@@ -63,8 +50,6 @@
 				)
 			);
 			?>
-			<a class="clr-blue fw-700" href="<?php echo get_the_permalink(get_the_ID()); ?>">Read More
-			</a>
 		</div>
 	</div>
 	<div class="spce md"></div>

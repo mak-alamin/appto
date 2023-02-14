@@ -109,20 +109,22 @@
 			</nav>
 			<!-- End navbar -->
 
-			<?php if (is_home() || is_search() && !is_front_page()) { ?>
+			<?php
+			if (!is_page() && !is_front_page()) {
+			?>
 				<!-- Blog Banner -->
-				<div id="home" class="hero-single grdnt-cyan">
+				<div id="home" class="hero-single grdnt-cyan <?php echo $single_classes; ?>">
 					<div class="container h-100">
 						<div class="row hero-content h-100 text-center">
 							<div class="h-100 flx-container align-flx-center">
 								<div class="intro-text light">
-									<h1 class="fw-700"><?php echo get_the_title(get_option('page_for_posts', true)); ?></h1>
+									<h1 class="fw-700"> <?php echo get_the_title(get_option('page_for_posts', true)); ?> </h1>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 				<!-- End Blog Banner -->
-			<?php } ?>
 
+			<?php } ?>
 		</header><!-- #masthead -->

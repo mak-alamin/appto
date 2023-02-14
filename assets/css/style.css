@@ -1565,6 +1565,9 @@ div[class*="-alt"]:after,
   transition: 0.5s;
   -webkit-transition: 0.5s;
 }
+.intro-text .post-meta li a {
+  color: #ffffff;
+}
 .post-meta li i {
   margin-right: 5px;
 }
