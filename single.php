@@ -88,4 +88,4 @@ get_header('single');
 <!-- End download-section -->
 
 <?php
-get_footer();
+get_footer('blog');

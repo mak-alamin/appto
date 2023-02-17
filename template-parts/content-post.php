@@ -37,18 +37,20 @@
 
             if (is_singular()) :
                 the_title('<h1 class="entry-title">', '</h1>');
+                the_content();
+                wp_link_pages(
+                    array(
+                        'before' => '<div class="page-links">' . esc_html__('Pages:', 'appto'),
+                        'after'  => '</div>',
+                    )
+                );
             else :
                 the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
+                the_excerpt();
+
+                echo '<a class="clr-blue fw-700" href="' . esc_url(get_permalink()) . '">Read More
+                </a>';
             endif;
-
-            the_content();
-
-            wp_link_pages(
-                array(
-                    'before' => '<div class="page-links">' . esc_html__('Pages:', 'appto'),
-                    'after'  => '</div>',
-                )
-            );
             ?>
         </div>
     </div>
