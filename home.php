@@ -41,30 +41,6 @@ get_header();
 								'next_text' => __('<i class="fa fa-arrow-right" aria-hidden="true"></i>'),
 							));
 							?>
-
-							<!-- Blog Pagination -->
-							<div class="blog_pagination">
-								<nav aria-label="Page navigation">
-									<ul class="pagination">
-										<li>
-											<a href="#" aria-label="Previous" class="prev">
-												<i class="fa fa-arrow-left" aria-hidden="true"></i>
-											</a>
-										</li>
-										<li><a href="#">1</a></li>
-										<li><a href="#">2</a></li>
-										<li><a href="#">3</a></li>
-										<li><a href="#">4</a></li>
-										<li class="blank"><a href="#">...</a></li>
-										<li><a href="#">12</a></li>
-										<li>
-											<a href="#" aria-label="Next" class="next">
-												<i class="fa fa-arrow-right" aria-hidden="true"></i>
-											</a>
-										</li>
-									</ul>
-								</nav>
-							</div>
 						<?php
 
 						else :

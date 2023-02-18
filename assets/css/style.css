@@ -1853,6 +1853,7 @@ button.wp-block-search__button {
 	cursor: pointer;
 	transition: all 100ms linear;
 	overflow: hidden;
+  position: relative;
 }
 .pagination .nav-links span{
   cursor: default;
@@ -1873,6 +1874,7 @@ a.next.page-numbers:before,
 	transition: all 300ms linear;
 	cursor: pointer;
 	color: #fff;
+  position: absolute;
 }
 a.prev.page-numbers:before,
 .blog_pagination .pagination li a.prev:before{
@@ -1885,12 +1887,13 @@ a.prev.page-numbers:before,
 	transition: all 300ms linear;
 	cursor: pointer;
 	color: #fff;
+  position: absolute;
 }
-a.prev.page-numbers:hover a.prev.page-numbers:before,
+a.page-numbers:hover::before,
 .blog_pagination .pagination li:hover a.prev:before{
 	left: 0px;
 }
-a.next.page-numbers:hover a.next.page-numbers:before,
+
 .blog_pagination .pagination li:hover a.next:before{
 	left: 0px;
 }
