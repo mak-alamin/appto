@@ -1,12 +1,12 @@
-<?php 
+<?php
 
-function appto_register_tgmpa(){
-    /*
+function appto_register_tgmpa()
+{
+	/*
 	 * Array of plugin arrays. Required keys are name and slug.
 	 * If the source is NOT from the .org repo, then source is also required.
 	 */
 	$plugins = array(
-
 		// This is an example of how to include a plugin bundled with a theme.
 		array(
 			'name'               => 'APPTO Elementor Extension',
@@ -17,7 +17,7 @@ function appto_register_tgmpa(){
 			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 		),
 
-        // This is an example of how to include a plugin from the WordPress Plugin Repository.
+		// This is an example of how to include a plugin from the WordPress Plugin Repository.
 		array(
 			'name'      => 'Elementor',
 			'slug'      => 'elementor',
@@ -34,14 +34,22 @@ function appto_register_tgmpa(){
 			'required'  => false,
 		),
 
+		array(
+			'name'         => 'Redux Framework', // The plugin name.
+			'slug'         => 'redux-framework', // The plugin slug (typically the folder name).
+			'source'       => 'https://github.com/reduxframework/redux-framework/archive/refs/heads/master.zip', // The plugin source.
+			'required'     => true, // If false, the plugin is only 'recommended' instead of required.
+		),
+
 
 		// This is an example of how to include a plugin from an arbitrary external source in your theme.
-		
-        // array(
+
+		// array(
 		// 	'name'         => 'TGM New Media Plugin', // The plugin name.
 		// 	'slug'         => 'tgm-new-media-plugin', // The plugin slug (typically the folder name).
 		// 	'source'       => 'https://s3.amazonaws.com/tgm/tgm-new-media-plugin.zip', // The plugin source.
 		// 	'required'     => true, // If false, the plugin is only 'recommended' instead of required.
+
 		// 	'external_url' => 'https://github.com/thomasgriffin/New-Media-Image-Uploader', // If set, overrides default API URL and points to an external URL.
 		// ),
 
@@ -49,8 +57,8 @@ function appto_register_tgmpa(){
 		// This is an example of how to include a plugin from a GitHub repository in your theme.
 		// This presumes that the plugin code is based in the root of the GitHub repository
 		// and not in a subdirectory ('/src') of the repository.
-		
-        // array(
+
+		// array(
 		// 	'name'      => 'Adminbar Link Comments to Pending',
 		// 	'slug'      => 'adminbar-link-comments-to-pending',
 		// 	'source'    => 'https://github.com/jrfnl/WP-adminbar-comments-to-pending/archive/master.zip',
@@ -58,7 +66,7 @@ function appto_register_tgmpa(){
 	);
 
 
-    /*
+	/*
 	 * Array of configuration settings. Amend each line as needed.
 	 *
 	 * TGMPA will start providing localized text strings soon. If you already have translations of our standard
@@ -155,7 +163,7 @@ function appto_register_tgmpa(){
 		*/
 	);
 
-	tgmpa( $plugins, $config );
+	tgmpa($plugins, $config);
 }
 
-add_action('tgmpa_register', 'appto_register_tgmpa' );
+add_action('tgmpa_register', 'appto_register_tgmpa');

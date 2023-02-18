@@ -1,4 +1,5 @@
 <?php
+
 /**
  * AppTo functions and definitions
  *
@@ -8,13 +9,13 @@
  */
 
 //Define Necessary Constants
-if ( ! defined( 'APPTO_VERSION' ) ) {
-	define( 'APPTO_VERSION', '1.0.0' );
+if (!defined('APPTO_VERSION')) {
+	define('APPTO_VERSION', '1.0.0');
 }
 define('APPTO_TEXT_DOMAIN', 'appto');
-define('APPTO_ASSETS', get_template_directory_uri() . '/assets' );
+define('APPTO_ASSETS', get_template_directory_uri() . '/assets');
 
-if ( ! function_exists( 'appto_setup' ) ) :
+if (!function_exists('appto_setup')) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -22,17 +23,18 @@ if ( ! function_exists( 'appto_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function appto_setup() {
+	function appto_setup()
+	{
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 * If you're building a theme based on AppTo, use a find and replace
 		 * to change 'appto' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'appto', get_template_directory() . '/languages' );
+		load_theme_textdomain('appto', get_template_directory() . '/languages');
 
 		// Add default posts and comments RSS feed links to head.
-		add_theme_support( 'automatic-feed-links' );
+		add_theme_support('automatic-feed-links');
 
 		/*
 		 * Let WordPress manage the document title.
@@ -40,21 +42,21 @@ if ( ! function_exists( 'appto_setup' ) ) :
 		 * hard-coded <title> tag in the document head, and expect WordPress to
 		 * provide it for us.
 		 */
-		add_theme_support( 'title-tag' );
+		add_theme_support('title-tag');
 
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
-		add_theme_support( 'post-thumbnails' );
+		add_theme_support('post-thumbnails');
 
 
 		/**
 		 * Require WP Bootstrap Nav Walker Class
 		 */
-		if( ! file_exists(get_template_directory() . '/libs/bootstrap-navwalker.php') ){
-			return new WP_Error( 'class-wp-bootstrap-navwalker-missing', __( 'It appears the class "wp-bootstrap-navwalker" file may be missing.', 'appto' ) );
+		if (!file_exists(get_template_directory() . '/libs/bootstrap-navwalker.php')) {
+			return new WP_Error('class-wp-bootstrap-navwalker-missing', __('It appears the class "wp-bootstrap-navwalker" file may be missing.', 'appto'));
 		} else {
 			require_once get_template_directory() . '/libs/bootstrap-navwalker.php';
 		}
@@ -62,7 +64,7 @@ if ( ! function_exists( 'appto_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'header-menu' => esc_html__( 'Primary', 'appto' ),
+				'header-menu' => esc_html__('Primary', 'appto'),
 			)
 		);
 
@@ -84,7 +86,7 @@ if ( ! function_exists( 'appto_setup' ) ) :
 		);
 
 		// Add theme support for selective refresh for widgets.
-		add_theme_support( 'customize-selective-refresh-widgets' );
+		add_theme_support('customize-selective-refresh-widgets');
 
 		/**
 		 * Add support for core custom logo.
@@ -102,7 +104,7 @@ if ( ! function_exists( 'appto_setup' ) ) :
 		);
 	}
 endif;
-add_action( 'after_setup_theme', 'appto_setup' );
+add_action('after_setup_theme', 'appto_setup');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -111,22 +113,24 @@ add_action( 'after_setup_theme', 'appto_setup' );
  *
  * @global int $content_width
  */
-function appto_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'appto_content_width', 640 );
+function appto_content_width()
+{
+	$GLOBALS['content_width'] = apply_filters('appto_content_width', 640);
 }
-add_action( 'after_setup_theme', 'appto_content_width', 0 );
+add_action('after_setup_theme', 'appto_content_width', 0);
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function appto_widgets_init() {
+function appto_widgets_init()
+{
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'appto' ),
+			'name'          => esc_html__('Sidebar', 'appto'),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'appto' ),
+			'description'   => esc_html__('Add widgets here.', 'appto'),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -134,25 +138,26 @@ function appto_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'appto_widgets_init' );
+add_action('widgets_init', 'appto_widgets_init');
 
 /**
  * Enqueue scripts and styles.
  */
-function appto_load_scripts() {
+function appto_load_scripts()
+{
 
 	wp_enqueue_style('vendor-bundle', APPTO_ASSETS . '/css/vendor.bundle.css', array(), APPTO_VERSION, 'all');
 
 	wp_enqueue_style('template-style', APPTO_ASSETS . '/css/style.css', array('vendor-bundle'), APPTO_VERSION, 'all');
 
-	wp_enqueue_style( 'appto-style', get_stylesheet_uri(), array(), APPTO_VERSION );
+	wp_enqueue_style('appto-style', get_stylesheet_uri(), array(), APPTO_VERSION);
 
-	wp_style_add_data( 'appto-style', 'rtl', 'replace' );
+	wp_style_add_data('appto-style', 'rtl', 'replace');
 
-	wp_enqueue_script( 'appto-navigation', get_template_directory_uri() . '/js/navigation.js', array(), APPTO_VERSION, true );
+	wp_enqueue_script('appto-navigation', get_template_directory_uri() . '/js/navigation.js', array(), APPTO_VERSION, true);
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
+	if (is_singular() && comments_open() && get_option('thread_comments')) {
+		wp_enqueue_script('comment-reply');
 	}
 
 	wp_enqueue_script('bundle-js', APPTO_ASSETS . '/js/vendor.bundle.js', array('jquery'), APPTO_VERSION, true);
@@ -160,7 +165,7 @@ function appto_load_scripts() {
 	wp_enqueue_script('wavify-jquery', APPTO_ASSETS . '/js/wavify/jquery.wavify.js', array('jquery'), APPTO_VERSION, true);
 	wp_enqueue_script('main-js', APPTO_ASSETS . '/js/script.js', array('jquery'), APPTO_VERSION, true);
 }
-add_action( 'wp_enqueue_scripts', 'appto_load_scripts' );
+add_action('wp_enqueue_scripts', 'appto_load_scripts');
 
 /**
  * Enqueue Admin scripts and styles.
@@ -169,7 +174,7 @@ function appto_load_admin_scripts()
 {
 	wp_enqueue_style('appto-admin-style', APPTO_ASSETS . '/css/admin-main.css', array(), APPTO_VERSION, 'all');
 }
-add_action( 'admin_enqueue_scripts', 'appto_load_admin_scripts' );
+add_action('admin_enqueue_scripts', 'appto_load_admin_scripts');
 
 /**
  * Implement the Custom Header feature.
@@ -200,14 +205,14 @@ require get_template_directory() . '/inc/customizer.php';
 /**
  * Load Jetpack compatibility file.
  */
-if ( defined( 'JETPACK__VERSION' ) ) {
+if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
 /**
  * Load WooCommerce compatibility file.
  */
-if ( class_exists( 'WooCommerce' ) ) {
+if (class_exists('WooCommerce')) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
 
@@ -215,3 +220,18 @@ if ( class_exists( 'WooCommerce' ) ) {
  * Demo Data Import
  */
 require_once get_template_directory() . '/inc/demo-import.php';
+
+
+/**
+ * Redux Options
+ */
+function appto_get_redux_option($key, $default = '')
+{
+	if (class_exists('Redux')) {
+		return Redux::get_option('appto_redux', $key, $default);
+	} else {
+		return $default;
+	}
+}
+require_once get_template_directory() . '/inc/redux/options.php';
+require_once get_template_directory() . '/inc/redux/metabox.php';

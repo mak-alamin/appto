@@ -123,12 +123,18 @@ get_header();
 </main><!-- #main -->
 
 <!-- download-section -->
+<?php
+$download_bg_image = appto_get_redux_option('blog_get_started_bg', site_url() . '/wp-content/uploads/2022/07/bg-parallax-c.png')['background-image'];
+
+$download_bg_color = appto_get_redux_option('blog_get_started_bg', site_url() . '/wp-content/uploads/2022/07/bg-parallax-c.png')['background-color'];
+?>
+
 <section class="grdnt-orange">
-	<div class="parallax-bg sec-pad-lg" style='background-image: url("<?php echo site_url() . '/wp-content/uploads/2022/07/bg-parallax-c.png'; ?>")' data-stellar-background-ratio="0.5">
+	<div class="parallax-bg sec-pad-lg" style='background-color:<?php echo $download_bg_color; ?>; background-image: url("<?php echo $download_bg_image; ?>");' data-stellar-background-ratio="0.5">
 		<div class="container">
 			<div class="row">
 				<div class="section-text text-center light">
-					<h2>Ready To Get Started!</h2>
+					<h2><?php echo appto_get_redux_option('blog_get_started_title', 'Get Started.') ?></h2>
 					<p>Lorem ipsum dolor sit amet menandri lobortis laboramus nec ex, ullum regione instructior duo ei.</p>
 				</div>
 				<div class="btn-holder text-center">
