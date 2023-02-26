@@ -44,6 +44,21 @@ Redux::set_field($opt_name, 'appto_blog', array(
 ));
 
 Redux::set_field($opt_name, 'appto_blog', array(
+    'id'       => 'blog_sidebar_position',
+    'type'     => 'button_set',
+    'title'    => esc_html__('Sidebar Position', 'appto'),
+    'subtitle' => esc_html__('Choose Blog Sidebar position', 'appto'),
+    'desc'     => esc_html__('Choose Blog Sidebar position for blog pages', 'appto'),
+    //Must provide key => value pairs for options
+    'options' => array(
+        'left' => 'Sidebar Left',
+        'right' => 'Sidebar Right',
+    ),
+    'default' => 'right'
+));
+
+
+Redux::set_field($opt_name, 'appto_blog', array(
     'id' => 'blog_get_started_divider_2',
     'type' => 'divide'
 ));
@@ -63,4 +78,9 @@ Redux::set_field($opt_name, 'appto_blog', array(
     'default'  => array(
         'background-color' => '#1e73be',
     )
+));
+
+Redux::set_field($opt_name, 'appto_blog', array(
+    'id' => 'blog_get_started_divider_3',
+    'type' => 'divide'
 ));

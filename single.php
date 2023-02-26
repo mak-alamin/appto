@@ -9,6 +9,9 @@
  */
 
 get_header('single');
+
+$sidebar_pos = appto_get_redux_option('blog_sidebar_position');
+
 ?>
 <main id="primary" class="site-main">
 
@@ -16,6 +19,13 @@ get_header('single');
 		<div class="container">
 			<div class="row">
 				<div class="post">
+					<!-- Side Bar Left -->
+					<?php if ($sidebar_pos == 'left') { ?>
+						<div class="col-md-4">
+							<?php get_sidebar(); ?>
+						</div>
+					<?php } ?>
+
 					<!-- Posts  -->
 					<div class="col-md-8 res-margin">
 						<?php
@@ -58,10 +68,12 @@ get_header('single');
 					</div>
 					<!-- End Posts -->
 
-					<!-- Side Bar -->
-					<div class="col-md-4">
-						<?php get_sidebar(); ?>
-					</div>
+					<!-- Side Bar Right -->
+					<?php if ($sidebar_pos == 'right') { ?>
+						<div class="col-md-4">
+							<?php get_sidebar(); ?>
+						</div>
+					<?php } ?>
 				</div>
 			</div>
 		</div>

@@ -7,6 +7,9 @@
  */
 
 get_header();
+
+$sidebar_pos = appto_get_redux_option('blog_sidebar_position');
+
 ?>
 <main id="primary" class="site-main">
 
@@ -14,6 +17,13 @@ get_header();
 		<div class="container">
 			<div class="row">
 				<div class="post">
+
+					<?php if ($sidebar_pos == 'left') { ?>
+						<div class="col-md-4">
+							<?php get_sidebar(); ?>
+						</div>
+					<?php } ?>
+
 					<!-- Posts  -->
 					<div class="col-md-8 res-margin">
 						<?php
@@ -52,9 +62,10 @@ get_header();
 					<!-- End Posts -->
 
 					<!-- Side Bar -->
-					<div class="col-md-4">
-						<!-- Popular Article -->
-						<!-- <div class="side-col box popular clearfix">
+					<?php if ($sidebar_pos == 'right') { ?>
+						<div class="col-md-4">
+							<!-- Popular Article -->
+							<!-- <div class="side-col box popular clearfix">
 							<h5 class="heading">Popular Article</h5>
 							<a href="blog-single-1.html">
 								<div class="col-xs-4 pl-0">
@@ -89,8 +100,8 @@ get_header();
 
 						<div class="spce md"></div> -->
 
-						<!-- Twitter Feed -->
-						<!-- <div class="side-col box feed clearfix">
+							<!-- Twitter Feed -->
+							<!-- <div class="side-col box feed clearfix">
 							<h5 class="heading">Twitter Feed</h5>
 							<ul class="twitter">
 								<li>
@@ -114,8 +125,9 @@ get_header();
 							</ul>
 						</div> -->
 
-						<?php get_sidebar(); ?>
-					</div>
+							<?php get_sidebar(); ?>
+						</div>
+					<?php } ?>
 				</div>
 			</div>
 		</div>
