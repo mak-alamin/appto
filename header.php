@@ -28,9 +28,9 @@
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'appto'); ?></a>
 
 		<!-- Preloader -->
-		<div id="preloader" class="grdnt-blue">
+		<!-- <div id="preloader" class="grdnt-blue">
 			<div id="status">&nbsp;</div>
-		</div>
+		</div> -->
 		<!-- #preloader -->
 
 

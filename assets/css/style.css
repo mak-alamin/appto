@@ -1582,6 +1582,9 @@ div[class*="-alt"]:after,
 .blog a {
   display: block;
 }
+.blog a.btn {
+  display: inline-block;
+}
 .blog a:hover {
   color: inherit;
 }

@@ -80,24 +80,9 @@ $sidebar_pos = appto_get_redux_option('blog_sidebar_position');
 	</section>
 </main><!-- #main -->
 
-<!-- download-section -->
-<section class="grdnt-orange">
-	<div class="parallax-bg sec-pad-lg" style='background-image: url("<?php echo site_url() . '/wp-content/uploads/2022/07/bg-parallax-c.png'; ?>")' data-stellar-background-ratio="0.5">
-		<div class="container">
-			<div class="row">
-				<div class="section-text text-center light">
-					<h2>Ready To Get Started!</h2>
-					<p>Lorem ipsum dolor sit amet menandri lobortis laboramus nec ex, ullum regione instructior duo ei.</p>
-				</div>
-				<div class="btn-holder text-center">
-					<a class="btn" href="#"><img alt="" src="image/is-badge.png"></a>
-					<a class="btn" href="#"><img alt="" src="image/an-badge.png"></a>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- End download-section -->
-
 <?php
+
+//Load Download Section
+require_once __DIR__ . '/templates/blog/download_section.php';
+
 get_footer('blog');

@@ -221,7 +221,6 @@ if (class_exists('WooCommerce')) {
  */
 require_once get_template_directory() . '/inc/demo-import.php';
 
-
 /**
  * Redux Options
  */
@@ -229,6 +228,14 @@ function appto_get_redux_option($key, $default = '')
 {
 	if (class_exists('Redux')) {
 		return Redux::get_option('appto_redux', $key, $default);
+	} else {
+		return $default;
+	}
+}
+function appto_get_redux_meta($key, $default = '')
+{
+	if (class_exists('Redux')) {
+		return redux_post_meta("appto_redux", get_the_ID(), $key);
 	} else {
 		return $default;
 	}
