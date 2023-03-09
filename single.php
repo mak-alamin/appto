@@ -12,6 +12,8 @@ get_header('single');
 
 $sidebar_pos = appto_get_redux_option('blog_sidebar_position');
 
+$allow_comments = appto_get_redux_option('appto_allow_comments');
+
 ?>
 <main id="primary" class="site-main">
 
@@ -46,18 +48,19 @@ $sidebar_pos = appto_get_redux_option('blog_sidebar_position');
 								get_template_part('template-parts/content', get_post_type());
 
 								// If comments are open or we have at least one comment, load up the comment template.
-								if (comments_open() || get_comments_number()) :
+
+								if ($allow_comments && comments_open()) :
 									comments_template();
 								endif;
 
 							endwhile;
 
-							the_post_navigation(
-								array(
-									'prev_text' => '<span class="nav-subtitle">' . esc_html__('Previous:', 'appto') . '</span> <span class="nav-title">%title</span>',
-									'next_text' => '<span class="nav-subtitle">' . esc_html__('Next:', 'appto') . '</span> <span class="nav-title">%title</span>',
-								)
-							);
+						// the_post_navigation(
+						// 	array(
+						// 		'prev_text' => '<span class="nav-subtitle">' . esc_html__('Prev:', 'appto') . '</span> <span class="nav-title">%title</span>',
+						// 		'next_text' => '<span class="nav-subtitle">' . esc_html__('Next:', 'appto') . '</span> <span class="nav-title">%title</span>',
+						// 	)
+						// );
 
 						else :
 

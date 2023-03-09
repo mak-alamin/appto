@@ -185,7 +185,7 @@ a:hover {
   color: #fff;
 }
 article {
-  border-bottom: 2px solid rgb(84, 84, 84);
+  /* border-bottom: 2px solid rgb(84, 84, 84); */
   margin-bottom: 20px;
 }
 /* ==========================================================================
@@ -435,6 +435,7 @@ header[class*="grdnt-"],
 nav[class*="grdnt-"],
 a[class*="grdnt-"],
 button[class*="grdnt-"],
+input[class*="grdnt-"],
 div[class*="grdnt-"].overly:before,
 section[class*="grdnt-"].overly:before,
 footer[class*="grdnt-"].overly:before,
@@ -449,7 +450,8 @@ header[class*="grdnt-"].overly:before {
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
 }
 a[class*="grdnt-"]:hover,
-button[class*="grdnt-"]:hover {
+button[class*="grdnt-"]:hover,
+input[class*="grdnt-"]:hover {
   color: #fff;
   background-position: right center;
 }
@@ -1782,6 +1784,14 @@ button.wp-block-search__button {
 .dtls .name {
   color: #37404d;
 }
+
+.comment-author.vcard img {
+  border-radius: 50%;
+}
+.comment-navigation .nav-links {
+  display: flex;
+  gap: 40px;
+}
 .cmmnt li {
   position: relative;
   margin-top: 50px;
@@ -1812,6 +1822,17 @@ button.wp-block-search__button {
   border-right: 20px solid #fafafa;
   transform: translateY(-50%);
 }
+.comments-area .comment-form-cookies-consent,
+.comments-area .form-submit,
+.comments-area .logged-in-as{
+  padding: 0 15px;
+}
+a.comment-reply-link{
+  color: #0facf3;
+}
+.comment-body img.avatar {
+  border-radius: 50%;
+}
 .page-description {
   text-align: center;
 }
@@ -1822,6 +1843,11 @@ button.wp-block-search__button {
 /* Pagination */
 .pagination .nav-links {
   display: flex;
+  gap: 20px;
+}
+.post-navigation .nav-links {
+  display: flex;
+  justify-content: space-between;
   gap: 20px;
 }
 .blog_pagination .pagination{

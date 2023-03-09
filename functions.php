@@ -145,7 +145,6 @@ add_action('widgets_init', 'appto_widgets_init');
  */
 function appto_load_scripts()
 {
-
 	wp_enqueue_style('vendor-bundle', APPTO_ASSETS . '/css/vendor.bundle.css', array(), APPTO_VERSION, 'all');
 
 	wp_enqueue_style('template-style', APPTO_ASSETS . '/css/style.css', array('vendor-bundle'), APPTO_VERSION, 'all');
@@ -220,6 +219,11 @@ if (class_exists('WooCommerce')) {
  * Demo Data Import
  */
 require_once get_template_directory() . '/inc/demo-import.php';
+
+/**
+ * Require Custom Comment
+ */
+require_once get_template_directory() . '/inc/custom-comment.php';
 
 /**
  * Redux Options

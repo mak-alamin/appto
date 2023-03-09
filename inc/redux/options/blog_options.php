@@ -22,9 +22,13 @@ Redux::set_field($opt_name, 'appto_blog', array(
 ));
 
 Redux::set_field($opt_name, 'appto_blog', array(
-    'id' => 'blog_divider',
-    'type' => 'divide'
+    'id'       => 'appto_allow_comments',
+    'type'     => 'switch',
+    'title'    => esc_html__('Allow Comments', 'appto'),
+    'subtitle' => esc_html__('Allow Commenting on your blog posts', 'appto'),
+    'default'  => true,
 ));
+
 
 // Blog Download Section
 Redux::set_section($opt_name, array(
