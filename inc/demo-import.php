@@ -81,7 +81,7 @@ function appto_import_files()
       'categories'                 => ['Landing Page'],
       'import_file_url'            => get_template_directory_uri() . '/demo-data/demo-data.xml',
       'import_preview_image_url'   => APPTO_ASSETS . '/image/appto_demo_preview.png',
-      'preview_url'                => 'http://www.your_domain.com/appto/demo-1',
+      'preview_url'                => 'https://codercafe24.com/demo/wp/appto',
     ],
 
     [

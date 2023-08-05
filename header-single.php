@@ -27,11 +27,10 @@
         <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'appto'); ?></a>
 
         <!-- Preloader -->
-        <div id="preloader" class="grdnt-blue">
+        <!-- <div id="preloader" class="grdnt-blue">
             <div id="status">&nbsp;</div>
-        </div>
+        </div> -->
         <!-- #preloader -->
-
 
         <!-- Header -->
         <header id="masthead" class="site-header">
@@ -110,8 +109,9 @@
 
             <?php
             if (!is_page() && !is_front_page() && is_single()) {
+                $header_bg = appto_get_redux_option('blog_header_bg', 'cyan');
             ?>
-                <div id="blog_single" class="hero-single nt-cent grdnt-cyan">
+                <div id="blog_single" class="hero-single nt-cent grdnt-<?php echo $header_bg; ?>">
                     <div class="container">
                         <div class="row hero-content">
                             <div class="intro-text light">

@@ -12,7 +12,6 @@ $sidebar_pos = appto_get_redux_option('blog_sidebar_position');
 
 ?>
 <main id="primary" class="site-main">
-
 	<section id="blog" class="sec-pad blog">
 		<div class="container">
 			<div class="row">

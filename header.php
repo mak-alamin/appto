@@ -111,9 +111,11 @@
 
 			<?php
 			if (!is_page() && !is_front_page()) {
+                $header_bg = appto_get_redux_option('blog_header_bg', 'cyan');
+				
 			?>
 				<!-- Blog Banner -->
-				<div id="home" class="hero-single grdnt-cyan <?php echo $single_classes; ?>">
+				<div id="home" class="hero-single grdnt-<?php echo $header_bg . ' ' . $single_classes; ?>">
 					<div class="container h-100">
 						<div class="row hero-content h-100 text-center">
 							<div class="h-100 flx-container align-flx-center">

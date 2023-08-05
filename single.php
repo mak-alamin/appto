@@ -10,7 +10,11 @@
 
 get_header('single');
 
-$sidebar_pos = appto_get_redux_option('blog_sidebar_position');
+$global_sidebar_pos = appto_get_redux_option('blog_sidebar_position');
+
+$single_sidebar_pos = appto_get_redux_meta('single_sidebar_pos');
+
+$sidebar_pos = ($single_sidebar_pos == 'global') ? $global_sidebar_pos : $single_sidebar_pos;
 
 $allow_comments = appto_get_redux_option('appto_allow_comments');
 

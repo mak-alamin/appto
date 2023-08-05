@@ -1,7 +1,15 @@
 div[data-name="comming soon"] .ocdi__gl-item-footer {
-    color: #000;
-    display: none;
+  color: #000;
+  display: none;
 }
 .ocdi__intro-text {
-    display: none;
+  display: none;
+}
+#redux-header {
+  background: linear-gradient(
+    45deg,
+    #2c3338 0%,
+    #085fc3 51%,
+    #1d2327 100%
+  ) !important;
 }

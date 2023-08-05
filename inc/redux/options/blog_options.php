@@ -4,7 +4,7 @@ Redux::set_section($opt_name, array(
     'title'  => esc_html__('Blog', 'appto'),
     'id'     => 'appto_blog',
     'desc'   => esc_html__('Change your Blog options here.', 'appto'),
-    'icon'   => 'el el-home',
+    'icon'   => 'el el-website',
 ));
 
 Redux::set_field($opt_name, 'appto_blog', array(
@@ -29,6 +29,31 @@ Redux::set_field($opt_name, 'appto_blog', array(
     'default'  => true,
 ));
 
+
+// Blog Header
+Redux::set_section($opt_name, array(
+    'title'  => esc_html__('Blog Header', 'appto'),
+    'id'     => 'appto_blog_header',
+    'desc'   => esc_html__('Change Blog Header options here.', 'appto'),
+    'icon'   => 'el el-website',
+    'subsection' => true,
+));
+Redux::set_field($opt_name, 'appto_blog_header', array(
+    'id'       => 'blog_header_bg',
+    'type'     => 'select',
+    'title'    => esc_html__('Header Background', 'appto'),
+    'subtitle' => esc_html__('Choose Header Background', 'appto'),
+    'desc'     => esc_html__('Choose Header Background for blog', 'appto'),
+    //Must provide key => value pairs for options
+    'options' => array(
+        'cyan' => 'Gradient Cyan',
+        'blue' => 'Gradient Blue',
+        'green' => 'Gradient Green',
+        'purple' => 'Gradient Purple',
+        'orange' => 'Gradient Orange',
+    ),
+    'default' => 'cyan'
+));
 
 // Blog Download Section
 Redux::set_section($opt_name, array(
@@ -98,7 +123,7 @@ Redux::set_section($opt_name, array(
     'title'  => esc_html__('Blog Footer', 'appto'),
     'id'     => 'appto_blog_footer',
     'desc'   => esc_html__('Change your Blog Footer options here.', 'appto'),
-    'icon'   => 'el el-cog',
+    'icon'   => 'el el-website',
     'subsection' => true,
 ));
 
