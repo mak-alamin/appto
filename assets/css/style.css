@@ -288,7 +288,8 @@ img {
 .bg-grey {
   background: #f8f8f8;
 }
-.grdnt-blue:not(.overly) {
+.grdnt-blue:not(.overly),
+.icon-grdnt-blue .elementor-icon {
   background-image: -webkit-linear-gradient(
     45deg,
     #812dbd 0%,
@@ -302,7 +303,8 @@ img {
     #812dbd 100%
   );
 }
-.grdnt-purple:not(.overly) {
+.grdnt-purple:not(.overly),
+.icon-grdnt-purple .elementor-icon {
   background-image: -webkit-linear-gradient(
     45deg,
     #fd81b5 0%,
@@ -316,7 +318,8 @@ img {
     #8089ff 100%
   );
 }
-.grdnt-orange:not(.overly) {
+.grdnt-orange:not(.overly),
+.icon-grdnt-orange .elementor-icon {
   background-image: -webkit-linear-gradient(
     45deg,
     #fe60a1 0%,
@@ -330,7 +333,8 @@ img {
     #fe60a1 100%
   );
 }
-.grdnt-cyan:not(.overly) {
+.grdnt-cyan:not(.overly),
+.icon-grdnt-cyan .elementor-icon {
   background-image: -webkit-linear-gradient(
     45deg,
     #8089ff 0%,
@@ -344,7 +348,8 @@ img {
     #8089ff 100%
   );
 }
-.grdnt-green:not(.overly) {
+.grdnt-green:not(.overly),
+.icon-grdnt-green .elementor-icon {
   background-image: -webkit-linear-gradient(
     45deg,
     #00c9fd 0%,
@@ -357,6 +362,14 @@ img {
     #81ee8e 51%,
     #00c9fd 100%
   );
+}
+
+.icon-grdnt-blue .elementor-icon,
+.icon-grdnt-purple .elementor-icon,
+.icon-grdnt-green .elementor-icon,
+.icon-grdnt-cyan .elementor-icon,
+.icon-grdnt-orange .elementor-icon{
+  background-size: 200% auto;
 }
 .grdnt-blue.overly:before {
   background-image: -webkit-linear-gradient(
@@ -1125,14 +1138,14 @@ div[class*="grdnt-"] .list-style li:before,
 }
 .screen .owl-dots,
 .quote .owl-dots {
-  width: 200px;
+  width: 250px;
   margin: 0 auto;
   margin-top: 30px;
   text-align: center;
 }
 .screen .owl-dot,
 .quote .owl-dot {
-  height: 12px;
+  height: 15px;
   width: 12px;
   border-radius: 50%;
   display: inline-block;
@@ -1143,6 +1156,10 @@ div[class*="grdnt-"] .list-style li:before,
 .quote .owl-dot.active {
   background: #0facf3;
 }
+.owl-nav.disabled {
+  display: none;
+}
+
 div[class*="grdnt"] .screen .owl-dot,
 [class*="grdnt"] .screen .owl-dot,
 [class*="grdnt"] .quote .owl-dot {

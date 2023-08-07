@@ -52,7 +52,6 @@
     });
 	
 	
-	
     /* ===================================================
        Counter Up
     ====================================================== */
@@ -72,82 +71,7 @@
         $parallax.parallaxie({
             speed: 0.5,
         });
-    }
-
-/* =======================================================
-    Screenshot carousel
-========================================================== */
-    var $loop = $('.screen')
-    if($loop.length > 0){
-        $loop.owlCarousel({
-        center: true,
-        loop:true,
-        nav: false,
-        autoplay:true,
-        autoplayTimeout:2000,
-        margin:25,
-        responsive:{
-            320:{
-                items:1,
-                margin:10
-            },
-            481:{
-                items:3,
-                margin:60
-            },
-            991:{
-                items:4
-            }
-        }
-    });
-    }
-
-
-
-/* ========================================================
-    Testimonial Carousel
-=========================================================== */
-  
-  var quoteCarousel = $('.quote')
-    if(quoteCarousel.length > 0){
-        quoteCarousel.owlCarousel({
-        loop:true,
-        autoplay:true,
-        autoplayTimeout:2500,
-        margin: 10,
-        nav: false,
-        responsive:{
-            300:{
-                items:1,
-            },
-            768:{
-                items:2,
-            }
-        }
-    })
-  }
-
-  /* ======================================================
-    device Carousel
-    ======================================================= */
-  
-    var $appSlide = $('.app-slide')
-    if($appSlide.length > 0){
-        $appSlide.owlCarousel({
-            loop:true,
-            center:true,
-            margin: 0,
-            autoWidth:true,
-            nav: false,
-            dots:true,
-            ouchDrag : false,
-             mouseDrag : false,
-            dotsContainer: '.tab-list'
-        })
-        $('.owl-dot').on('click', function() {
-          $appSlide.trigger('to.owl.carousel', [$(this).index(), 300]);
-        });    
-    }
+    } 
 
     /* ========================================
         Wow
