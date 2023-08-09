@@ -2367,3 +2367,8 @@ div[class*="style-"].footer-wrapper,
   box-shadow: 0 20px 70px rgba(0, 0, 0, 0.2);
   transform: translateY(-5%);
 }
+
+/* WP Theme Styles */
+.appto-posts .col-md-6 {  
+margin-bottom: 20px;
+}
