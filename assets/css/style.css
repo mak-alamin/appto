@@ -1537,14 +1537,6 @@ div[class*="-alt"]:after,
   position: relative;
   z-index: 10;
 }
-.pricing .pricing-table.main [class*="style-"]:after,
-.pricing.style-wave:after {
-  bottom: -10px;
-}
-.pricing.style-wave-zig:after{
-  bottom: -25px;
-}
-
 .pricing .pricing-table.main [class*="style-angle"]:after {
   background: #fff;
   height: 30% !important;
@@ -2383,6 +2375,27 @@ div[class*="style-"].footer-wrapper,
 [class*="btn grdnt-"]:hover {
   color: #fff;
   background-position: right center;
+}
+.pricing .pricing-table.main [class*="style-"]:after,
+.pricing.style-wave:after {
+  bottom: -10px;
+}
+.pricing.style-wave-zig:after{
+  bottom: -25px;
+}
+.pricing.style-poly:after {
+  bottom: -18px;
+}
+.pricing.style-curve:after {
+  bottom: -20px;
+}
+.pricing.style-angle:after {
+  bottom: -35px;
+  background: #fff;
+  height: 30%;
+}
+.tab-horizon .icon{
+  color: #fff;
 }
 .appto-posts .col-md-6 {  
 margin-bottom: 20px;
