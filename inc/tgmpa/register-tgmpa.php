@@ -29,8 +29,8 @@ function appto_register_tgmpa()
 			'required'  => false,
 		),
 		array(
-			'name'      => 'WPForms',
-			'slug'      => 'wpforms-lite',
+			'name'      => 'Contact Form 7',
+			'slug'      => 'contact-form-7',
 			'required'  => false,
 		),
 
