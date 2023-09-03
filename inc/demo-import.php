@@ -133,8 +133,8 @@ function appto_ocdi_after_import_setup()
   );
 
   // Assign front page and posts page (blog page).
-  $front_page = get_page_by_title('Layout 1');
-  $blog_page  = get_page_by_title('Blog');
+  $front_page = get_page_by_path('layout-1');
+  $blog_page  = get_page_by_path('blog');
 
   update_option('show_on_front', 'page');
   update_option('page_on_front', $front_page->ID);
