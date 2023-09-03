@@ -13,7 +13,8 @@ add_filter('upload_mimes', 'appto_custom_mime_types');
 /**
  * Required and Recommended Plugins
  */
-function appto_register_plugins( $plugins ) {
+function appto_register_plugins($plugins)
+{
   $theme_plugins = [
     [
       'name'     => 'Elementor',
@@ -66,6 +67,14 @@ add_filter('ocdi/plugin_intro_text', 'appto_plugin_intro_text');
 //Before Demo Import
 function appto_before_content_import($selected_import)
 {
+  $oldPosts = get_posts();
+
+  foreach ($oldPosts as $post) {
+    wp_delete_post($post->ID, false);
+  }
+
+  update_option('sidebars_widgets', array());
+
   if ('App To' === $selected_import['import_file_name']) {
     echo "Before APP TO Demo Import Text...";
   } else {
