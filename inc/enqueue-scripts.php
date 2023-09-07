@@ -2,6 +2,7 @@
 
 function appto_load_scripts()
 {
+	// CSS Enqueue
 	wp_enqueue_style('vendor-bundle', APPTO_ASSETS . '/css/vendor.bundle.css', array(), APPTO_VERSION, 'all');
 
 	wp_enqueue_style('template-style', APPTO_ASSETS . '/css/style.css', array('vendor-bundle'), APPTO_VERSION, 'all');
@@ -9,6 +10,9 @@ function appto_load_scripts()
 	wp_enqueue_style('appto-style', get_stylesheet_uri(), array(), APPTO_VERSION);
 
 	wp_style_add_data('appto-style', 'rtl', 'replace');
+
+	// JS Enqueue
+	wp_enqueue_script('jquery', false, array(), false, false);
 
 	wp_register_script('appto-navigation', get_template_directory_uri() . '/js/navigation.js', array(), APPTO_VERSION, true);
 
