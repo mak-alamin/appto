@@ -48,7 +48,7 @@ function appto_customize_register($wp_customize)
 
 	//Logo Upload Section
 	$wp_customize->add_section('appto_logo', array(
-		'title'	=> __('Logo'),
+		'title'	=> __('Logo', 'appto'),
 		'panel'	=>	'header_id'
 	));
 
@@ -95,12 +95,9 @@ function appto_customize_register($wp_customize)
 
 
 
-
-
-
 	//App Download Button Section
 	$wp_customize->add_section('app_button', array(
-		'title'	=> __('App Download Button'),
+		'title'	=> __('App Download Button', 'appto'),
 		'panel'	=>	'header_id'
 	));
 
@@ -110,6 +107,8 @@ function appto_customize_register($wp_customize)
 		'capability' => 'edit_theme_options',
 		'default' => true,
 		'transport' => 'refresh',
+		'sanitize_callback' => '',
+		'sanitize_js_callback' => '',
 	));
 
 	$wp_customize->add_control('enable_app_dl_btn', array(
@@ -124,6 +123,8 @@ function appto_customize_register($wp_customize)
 		'capability' => 'edit_theme_options',
 		'default' => 'Get App Now',
 		'transport' => 'refresh',
+		'sanitize_callback' => '',
+		'sanitize_js_callback' => '',
 	));
 
 	$wp_customize->add_control('app_dl_btn_text', array(

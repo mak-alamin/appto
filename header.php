@@ -95,7 +95,7 @@
 								if ($btn_enabled) {
 								?>
 									<div class="nav-btn">
-										<a class="btn btn-sm grdnt-green"><?php echo get_theme_mod('app_dl_btn_text', 'Get App Now'); ?>
+										<a class="btn btn-sm grdnt-green"><?php echo esc_html(get_theme_mod('app_dl_btn_text', 'Get App Now')); ?>
 										</a>
 									</div>
 

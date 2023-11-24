@@ -27,7 +27,7 @@ function appto_list_comments($comment, $args, $depth)
             <?php endif; ?>
 
             <?php if ($comment->comment_approved == '0') : ?>
-                <em class="comment-awaiting-moderation"><?php echo esc_html__('Your comment is awaiting moderation.', 'appto'); ?></em>
+                <em class="comment-awaiting-moderation"><?php echo __('Your comment is awaiting moderation.', 'appto'); ?></em>
                 <br />
             <?php endif; ?>
 
@@ -39,8 +39,8 @@ function appto_list_comments($comment, $args, $depth)
 
                 printf(__('<span class="fw-700 name">%s</span>', 'appto'), get_comment_author_link());
 
-                echo '<div>' . _x(get_comment_date(), 'appto') . '</div>';
-                echo '<div>' . _x(get_comment_time(), 'appto') . '</div>';
+                echo '<div>' . get_comment_date() . '</div>';
+                echo '<div>' . get_comment_time() . '</div>';
 
                 edit_comment_link(__('(Edit)', 'appto'), '  ', '');
 
@@ -103,7 +103,7 @@ function appto_comment_form()
         'cancel_reply_before'  => '',
         'cancel_reply_after'   => '',
 
-        'cancel_reply_link'    => esc_html__('Cancel reply'),
+        'cancel_reply_link'    => esc_html__('Cancel reply', 'appto'),
 
         'fields' => apply_filters(
             'comment_form_default_fields',

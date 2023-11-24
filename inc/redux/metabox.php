@@ -10,12 +10,12 @@ if (!function_exists("appto_redux_add_metaboxes")) :
         $boxSections = array();
 
         $boxSections[] = array(
-            // 'title'         => __('AppTo Settings', 'redux-framework-demo'),
+            // 'title'         => __('AppTo Settings', 'appto'),
             // 'icon'          => 'el-icon-home', // Only used with metabox position normal or advanced
             'fields'        => array(
                 array(
                     'id' => 'single_sidebar_pos',
-                    'title' => __('Sidebar Position', 'redux-framework-demo'),
+                    'title' => __('Sidebar Position', 'appto'),
                     'desc' => 'Select the sidebar position',
                     'type' => 'select',
                     'options' => array(

@@ -46,8 +46,8 @@ $sidebar_pos = appto_get_redux_option('blog_sidebar_position');
 
 							the_posts_pagination(array(
 								'mid_size'  => 2,
-								'prev_text' => __('<i class="fa fa-arrow-left" aria-hidden="true"></i>'),
-								'next_text' => __('<i class="fa fa-arrow-right" aria-hidden="true"></i>'),
+								'prev_text' => '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
+								'next_text' => '<i class="fa fa-arrow-right" aria-hidden="true"></i>',
 							));
 							?>
 						<?php

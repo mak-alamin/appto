@@ -1,15 +1,4 @@
 <?php
-
-function appto_custom_mime_types($mimes)
-{
-  $mimes['xml'] = 'application/xml';
-  $mimes['svg'] = 'image/svg+xml';
-  $mimes['svgz'] = 'image/svg+xml';
-
-  return $mimes;
-}
-add_filter('upload_mimes', 'appto_custom_mime_types');
-
 /**
  * Required and Recommended Plugins
  */
@@ -41,9 +30,9 @@ function appto_plugin_page_setup($default_settings)
 {
   $default_settings['parent_slug'] = 'themes.php';
 
-  $default_settings['page_title']  = esc_html__('APPTO Demo Import', APPTO_TEXT_DOMAIN);
+  $default_settings['page_title']  = esc_html__('APPTO Demo Import', 'appto');
 
-  $default_settings['menu_title']  = esc_html__('APPTO Demo', APPTO_TEXT_DOMAIN);
+  $default_settings['menu_title']  = esc_html__('APPTO Demo', 'appto');
 
   $default_settings['capability']  = 'import';
 
