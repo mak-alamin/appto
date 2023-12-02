@@ -102,6 +102,11 @@ if (!function_exists('appto_setup')) :
 				'flex-height' => true,
 			)
 		);
+
+		add_theme_support( "custom-background" );
+		add_theme_support( "wp-block-styles" );
+		add_theme_support( "responsive-embeds" );
+		add_theme_support( "align-wide" );
 	}
 endif;
 add_action('after_setup_theme', 'appto_setup');

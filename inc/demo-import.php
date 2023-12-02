@@ -13,8 +13,9 @@ function appto_register_plugins($plugins)
     [
       'name'     => 'AppTo Elementor Extension',
       'slug'     => 'appto-elementor-extension',
-      'source'   => get_template_directory_uri() . '/bundled-plugins/appto-elementor-extension.zip',
+      'source'   => 'https://github.com/mak-alamin/appto-elementor-extension/archive/refs/tags/v1.0.0.zip',
       'required' => true,
+      'preselected' => true,
     ],
   ];
 

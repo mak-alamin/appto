@@ -82,7 +82,7 @@
 
                                 <?php
                                 wp_nav_menu(array(
-                                    'menu'    => 'header-menu',
+                                    'theme_location' => 'header-menu',
                                     'menu_class' => 'nav navbar-nav menu',
                                     'container' => '',
                                     'walker' => new WP_Bootstrap_Navwalker()

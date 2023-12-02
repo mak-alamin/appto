@@ -93,8 +93,6 @@ function appto_customize_register($wp_customize)
 		)
 	)));
 
-
-
 	//App Download Button Section
 	$wp_customize->add_section('app_button', array(
 		'title'	=> __('App Download Button', 'appto'),
@@ -107,8 +105,7 @@ function appto_customize_register($wp_customize)
 		'capability' => 'edit_theme_options',
 		'default' => true,
 		'transport' => 'refresh',
-		'sanitize_callback' => '',
-		'sanitize_js_callback' => '',
+		'sanitize_callback' => 'appto_sanitize_customizer_checkbox',
 	));
 
 	$wp_customize->add_control('enable_app_dl_btn', array(
@@ -123,8 +120,7 @@ function appto_customize_register($wp_customize)
 		'capability' => 'edit_theme_options',
 		'default' => 'Get App Now',
 		'transport' => 'refresh',
-		'sanitize_callback' => '',
-		'sanitize_js_callback' => '',
+		'sanitize_callback' => 'wp_filter_nohtml_kses',
 	));
 
 	$wp_customize->add_control('app_dl_btn_text', array(
@@ -134,6 +130,12 @@ function appto_customize_register($wp_customize)
 	));
 }
 add_action('customize_register', 'appto_customize_register');
+
+//radio box sanitization function
+function appto_sanitize_customizer_checkbox( $input ){   
+	//returns true if checkbox is checked
+	return ( isset( $input ) && $input ? true : false );
+}
 
 /**
  * Render the site title for the selective refresh partial.

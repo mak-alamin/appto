@@ -11,8 +11,8 @@ function appto_register_tgmpa()
 		array(
 			'name'               => 'APPTO Elementor Extension',
 			'slug'               => 'appto-elementor-extension',
-			'source'             => get_template_directory() . '/bundled-plugins/appto-elementor-extension.zip',
-			'required'           => false,
+			'source'             =>'https://github.com/mak-alamin/appto-elementor-extension/archive/refs/tags/v1.0.0.zip',
+			'required'           => true,
 			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 		),
@@ -21,7 +21,7 @@ function appto_register_tgmpa()
 		array(
 			'name'      => 'Elementor',
 			'slug'      => 'elementor',
-			'required'  => false,
+			'required'  => true,
 		),
 		array(
 			'name'      => 'One Click Demo Import',
