@@ -115,7 +115,7 @@
 				
 			?>
 				<!-- Blog Banner -->
-				<div id="home" class="hero-single grdnt-<?php echo $header_bg . ' ' . $single_classes; ?>">
+				<div id="home" class="hero-single grdnt-<?php echo $header_bg; ?>">
 					<div class="container h-100">
 						<div class="row hero-content h-100 text-center">
 							<div class="h-100 flx-container align-flx-center">
