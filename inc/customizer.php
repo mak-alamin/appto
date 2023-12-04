@@ -134,7 +134,9 @@ add_action('customize_register', 'appto_customize_register');
 //radio box sanitization function
 function appto_sanitize_customizer_checkbox( $input ){   
 	//returns true if checkbox is checked
-	return ( isset( $input ) && $input ? true : false );
+	
+	return $input;
+	// return ( isset( $input ) && $input ? true : false );
 }
 
 /**

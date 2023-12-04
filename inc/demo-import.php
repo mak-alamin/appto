@@ -13,7 +13,7 @@ function appto_register_plugins($plugins)
     [
       'name'     => 'AppTo Elementor Extension',
       'slug'     => 'appto-elementor-extension',
-      'source'   => 'https://github.com/mak-alamin/appto-elementor-extension/archive/refs/tags/v1.0.0.zip',
+      'source'   => 'https://github.com/mak-alamin/appto-elementor-extension/archive/refs/heads/main.zip',
       'required' => true,
       'preselected' => true,
     ],
@@ -118,7 +118,7 @@ function appto_ocdi_after_import_setup()
   set_theme_mod(
     'nav_menu_locations',
     [
-      'main-menu' => $main_menu->term_id, // replace 'main-menu' here with the menu location identifier from register_nav_menu() function in your theme.
+      'header-menu' => $main_menu->term_id,
     ]
   );
 

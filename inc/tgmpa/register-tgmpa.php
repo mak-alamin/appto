@@ -11,7 +11,7 @@ function appto_register_tgmpa()
 		array(
 			'name'               => 'APPTO Elementor Extension',
 			'slug'               => 'appto-elementor-extension',
-			'source'             =>'https://github.com/mak-alamin/appto-elementor-extension/archive/refs/tags/v1.0.0.zip',
+			'source'             =>'https://github.com/mak-alamin/appto-elementor-extension/archive/refs/heads/main.zip',
 			'required'           => true,
 			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
