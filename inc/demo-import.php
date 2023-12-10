@@ -113,7 +113,7 @@ add_filter('ocdi/import_files', 'appto_import_files');
 function appto_ocdi_after_import_setup()
 {
   // Assign menus to their locations.
-  $main_menu = get_term_by('name', 'Main Menu', 'nav_menu');
+  $main_menu = get_term_by('name', 'Main Manu', 'nav_menu');
 
   set_theme_mod(
     'nav_menu_locations',
