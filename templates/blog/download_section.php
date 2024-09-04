@@ -6,7 +6,7 @@ $play_store = appto_get_redux_option('blog_download_playstore');
 ?>
 
 <section class="grdnt-orange">
-    <div class="parallax-bg sec-pad-lg" style='background-image: url("<?php echo $download_bg['url']; ?>");' data-stellar-background-ratio="0.5">
+    <div class="parallax-bg sec-pad-lg" style='background-image: url("<?php echo esc_url($download_bg['url']); ?>");' data-stellar-background-ratio="0.5">
         <div class="container">
             <div class="row">
                 <div class="section-text text-center light">
@@ -15,11 +15,11 @@ $play_store = appto_get_redux_option('blog_download_playstore');
                 </div>
                 <div class="btn-holder text-center">
                     <?php if (!empty($app_store)) { ?>
-                        <a class="btn" href="<?php echo $app_store; ?>"><img alt="" src="<?php echo APPTO_ASSETS . '/image/is-badge.png'; ?>"></a>
+                        <a class="btn" href="<?php echo esc_url($app_store); ?>"><img alt="" src="<?php echo APPTO_ASSETS . '/image/is-badge.png'; ?>"></a>
                     <?php } ?>
 
                     <?php if (!empty($play_store)) { ?>
-                        <a class="btn" href="<?php echo $play_store; ?>"><img alt="" src="<?php echo APPTO_ASSETS . '/image/an-badge.png'; ?>"></a>
+                        <a class="btn" href="<?php echo esc_url($play_store); ?>"><img alt="" src="<?php echo APPTO_ASSETS . '/image/an-badge.png'; ?>"></a>
                     <?php } ?>
                 </div>
             </div>

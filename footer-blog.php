@@ -24,7 +24,6 @@ $google_plus = appto_get_redux_option('blog_footer_google_plus');
     <div class="container footer-content">
         <div class="row">
             <div class="social-holder text-center light">
-
                 <?php if (!empty($facebook)) { ?>
                     <a class="grdnt-blue" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                 <?php } ?>
@@ -43,7 +42,12 @@ $google_plus = appto_get_redux_option('blog_footer_google_plus');
             </div>
             <div class="spce"></div>
             <div class="copyright text-center light">
-                <?php echo $copyright_text; ?>
+                <?php
+
+                $allowed_tags = array('br' => array(), 'p' => array(), 'strong' => array(), 'b' => array());
+
+                echo  wp_kses($copyright_text, $allowed_tags);
+                ?>
             </div>
         </div>
     </div>

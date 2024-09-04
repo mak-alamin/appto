@@ -20,7 +20,7 @@ function appto_list_comments($comment, $args, $depth)
         $add_below = 'div-comment';
     }
 ?>
-    <<?php echo $tag ?> <?php comment_class(empty($args['has_children']) ? (!($args['has_children'] == 'depth-1') ? 'new-depth' : '') : 'parent') ?> id="comment-<?php comment_ID() ?>">
+    <<?php echo esc_html($tag); ?> <?php comment_class(empty($args['has_children']) ? (!($args['has_children'] == 'depth-1') ? 'new-depth' : '') : 'parent') ?> id="comment-<?php comment_ID() ?>">
         <?php if ('div' != $args['style']) : ?>
 
             <div id="div-comment-<?php comment_ID() ?>" class="comment-body">

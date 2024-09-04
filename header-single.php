@@ -111,7 +111,7 @@
             if (!is_page() && !is_front_page() && is_single()) {
                 $header_bg = appto_get_redux_option('blog_header_bg', 'cyan');
             ?>
-                <div id="blog_single" class="hero-single nt-cent grdnt-<?php echo $header_bg; ?>">
+                <div id="blog_single" class="hero-single nt-cent grdnt-<?php echo esc_attr($header_bg); ?>">
                     <div class="container">
                         <div class="row hero-content">
                             <div class="intro-text light">
