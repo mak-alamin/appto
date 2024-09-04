@@ -80,7 +80,7 @@ add_action('ocdi/before_content_import', 'appto_before_content_import');
  * Demo Import
  * ------------------------------------
  */
-function appto_import_files()
+function appto_import_demo_data()
 {
   return [
     [
@@ -105,7 +105,7 @@ function appto_import_files()
     ]
   ];
 }
-add_filter('ocdi/import_files', 'appto_import_files');
+add_filter('ocdi/import_files', 'appto_import_demo_data');
 
 /**
  * After Demo Import
