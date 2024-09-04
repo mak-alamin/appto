@@ -9,6 +9,7 @@ function appto_register_plugins($plugins)
       'name'     => 'Elementor',
       'slug'     => 'elementor',
       'required' => true,
+      'preselected' => true,
     ],
     [
       'name'     => 'AppTo Elementor Extension',
@@ -64,6 +65,8 @@ function appto_before_content_import($selected_import)
   }
 
   update_option('sidebars_widgets', array());
+
+  update_option('elementor_load_fa4_shim', 'yes');
 
   if ('App To' === $selected_import['import_file_name']) {
     echo "Before APP TO Demo Import Text...";
