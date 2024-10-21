@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Required and Recommended Plugins
  */
@@ -22,6 +23,7 @@ function appto_register_plugins($plugins)
 
   return $theme_plugins;
 }
+
 add_filter('ocdi/register_plugins', 'appto_register_plugins');
 
 
@@ -115,6 +117,143 @@ add_filter('ocdi/import_files', 'appto_import_demo_data');
  */
 function appto_ocdi_after_import_setup()
 {
+  // Set Elementor Settings
+  $ele_settings = [
+    'system_colors' => [
+      [
+        '_id' => 'primary',
+        'title' => 'Primary',
+        'color' => '#6EC1E4'
+      ],
+      [
+        '_id' => 'secondary',
+        'title' => 'Secondary',
+        'color' => '#54595F'
+      ],
+      [
+        '_id' => 'text',
+        'title' => 'Text',
+        'color' => '#7A7A7A'
+      ],
+      [
+        '_id' => 'accent',
+        'title' => 'Accent',
+        'color' => '#61CE70'
+      ]
+    ],
+
+    'custom_colors' => [],
+
+    'system_typography' => [
+      [
+        '_id' => 'primary',
+        'title' => 'Primary',
+        'typography_typography' => 'custom',
+        'typography_font_family' => 'Roboto',
+        'typography_font_weight' => 600
+      ],
+      [
+        '_id' => 'secondary',
+        'title' => 'Secondary',
+        'typography_typography' => 'custom',
+        'typography_font_family' => 'Roboto Slab',
+        'typography_font_weight' => 400
+      ],
+      [
+        '_id' => 'text',
+        'title' => 'Text',
+        'typography_typography' => 'custom',
+        'typography_font_family' => 'Roboto',
+        'typography_font_weight' => 400
+      ],
+      [
+        '_id' => 'accent',
+        'title' => 'Accent',
+        'typography_typography' => 'custom',
+        'typography_font_family' => 'Roboto',
+        'typography_font_weight' => 500
+      ]
+    ],
+
+    'custom_typography' => [],
+
+    'default_generic_fonts' => 'Sans-serif',
+    'h5_typography_typography' => 'custom',
+    'page_title_selector' => 'h1.entry-title',
+
+    'h5_typography_font_size_mobile' => [
+      'unit' => 'em',
+      'size' => 1.5,
+      'sizes' => []
+    ],
+
+    'viewport_md' => 768,
+    'viewport_lg' => 1025,
+
+    'h5_typography_font_size' => [
+      'unit' => 'px',
+      'size' => 20,
+      'sizes' => []
+    ],
+
+    'activeItemIndex' => 1,
+    'h2_typography_typography' => 'custom',
+
+    'h2_typography_font_size_mobile' => [
+      'unit' => 'em',
+      'size' => 2.25,
+      'sizes' => []
+    ],
+
+    'h2_typography_font_size' => [
+      'unit' => 'px',
+      'size' => 38,
+      'sizes' => []
+    ],
+
+    'h3_typography_typography' => 'custom',
+
+    'h2_typography_font_size_tablet' => [
+      'unit' => 'em',
+      'size' => 2.25,
+      'sizes' => []
+    ],
+
+    'h3_typography_font_size_tablet' => [
+      'unit' => 'em',
+      'size' => 2.25,
+      'sizes' => []
+    ],
+
+    'body_typography_typography' => 'custom',
+
+    'body_typography_font_size' => [
+      'unit' => 'em',
+      'size' => '',
+      'sizes' => []
+    ],
+
+    'body_typography_font_weight' => 400,
+
+    'body_typography_line_height' => [
+      'unit' => 'em',
+      'size' => 1.8,
+      'sizes' => []
+    ],
+
+    'active_breakpoints' => [
+      'viewport_mobile',
+      'viewport_mobile_extra',
+      'viewport_tablet'
+    ],
+
+    'viewport_mobile_extra' => 768
+  ];
+
+  $default_kit_id = get_option('elementor_active_kit');
+  update_post_meta($default_kit_id, '_elementor_page_settings', $ele_settings);
+
+
   // Assign menus to their locations.
   $main_menu = get_term_by('name', 'Main Manu', 'nav_menu');
 

@@ -8,10 +8,18 @@
  * @package AppTo
  */
 
+// add_action('init', function () {
+// 	$ele_kit_id = get_option( 'elementor_active_kit' );
+// 	$ele_settings = get_post_meta( $ele_kit_id, '_elementor_page_settings', true );
+
+// 	// shiny_log($ele_settings, 'ele_settings');
+// });
+
 //Define Necessary Constants
 if (!defined('APPTO_VERSION')) {
 	define('APPTO_VERSION', '1.0.0');
 }
+
 define('APPTO_TEXT_DOMAIN', 'appto');
 define('APPTO_ASSETS', get_template_directory_uri() . '/assets');
 
